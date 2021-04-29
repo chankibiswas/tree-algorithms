@@ -1,0 +1,20 @@
+package com.algorithm.tree;
+
+public class TreeNode {
+    public TreeNode left;
+    public TreeNode right;
+    int val;
+
+    public TreeNode() {
+    }
+
+    public TreeNode(final int val) {
+        this.val = val;
+    }
+
+    public TreeNode(final int val, final TreeNode left, final TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+}
