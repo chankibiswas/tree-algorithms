@@ -4,10 +4,10 @@ import com.algorithm.tree.TreeNode;
 
 public class MaxDepth {
 
-    public int maxDepth(final TreeNode root) {
+    public static int getMaxDepth(final TreeNode root) {
         if (root.left == null && root.right == null) {
             return 1;
         }
-        return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+        return 1 + Math.max(getMaxDepth(root.left), getMaxDepth(root.right));
     }
 }
