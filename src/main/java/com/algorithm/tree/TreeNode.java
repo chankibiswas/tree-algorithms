@@ -1,9 +1,10 @@
 package com.algorithm.tree;
 
 public class TreeNode {
+
     public TreeNode left;
     public TreeNode right;
-    int val;
+    private int val;
 
     public TreeNode() {
     }
@@ -16,5 +17,9 @@ public class TreeNode {
         this.val = val;
         this.left = left;
         this.right = right;
+    }
+
+    public int getValue() {
+        return val;
     }
 }

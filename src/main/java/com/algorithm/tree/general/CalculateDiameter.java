@@ -4,7 +4,7 @@ import com.algorithm.tree.TreeNode;
 
 public class CalculateDiameter {
 
-    private int answer = 0;
+    private int result = 0;
 
     public static void main(String[] s) {
         TreeNode t1 = new TreeNode(1);
@@ -31,7 +31,7 @@ public class CalculateDiameter {
             return 0;
         }
         calculateHeightOfBinaryTree(t);
-        return answer;
+        return result;
     }
 
     private int calculateHeightOfBinaryTree(final TreeNode t) {
@@ -41,9 +41,11 @@ public class CalculateDiameter {
         int leftHeight = calculateHeightOfBinaryTree(t.left);
         int rightHeight = calculateHeightOfBinaryTree(t.right);
 
-        answer = Math.max(answer, 1 + leftHeight + rightHeight);
+        int temp = 1 + Math.max(leftHeight, rightHeight);
+        int ans = Math.max(temp, 1 + leftHeight + rightHeight);
+        result = Math.max(result, ans);
 
-        return 1 + Math.max(leftHeight, rightHeight);
+        return temp;
     }
 
 }
