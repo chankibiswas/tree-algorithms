@@ -73,7 +73,7 @@ public class MaximumPathSum {
         }
         int leftVal = calculateMaximumPathSumFromLeafToLeaf(t.left);
         int rightVal = calculateMaximumPathSumFromLeafToLeaf(t.right);
-        
+
         // It's strategy is to send value up.
         int temp = leftVal + rightVal + t.getValue();
         // Here strategy is to have left, right and node value. Treating this node as root here.
