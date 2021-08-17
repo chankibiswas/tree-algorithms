@@ -23,7 +23,9 @@ public class CalculateDiameter {
         t5.left = t7;
         t5.right = t8;
 
-        System.out.println(new CalculateDiameter().getDiameter(t1));
+        CalculateDiameter c = new CalculateDiameter();
+        c.getDiameter(t1);
+        System.out.println(c.result);
     }
 
     private int getDiameter(final TreeNode t) {
@@ -41,8 +43,11 @@ public class CalculateDiameter {
         int leftHeight = calculateHeightOfBinaryTree(t.left);
         int rightHeight = calculateHeightOfBinaryTree(t.right);
 
+        // Temp is value when that particular node is not taken as root for this calculation. This is one option.
         int temp = 1 + Math.max(leftHeight, rightHeight);
+        // Ans is value when that particular node is taken as root for this calculation. This is another option.
         int ans = Math.max(temp, 1 + leftHeight + rightHeight);
+        // We choose max among the above 2 options
         result = Math.max(result, ans);
 
         return temp;
