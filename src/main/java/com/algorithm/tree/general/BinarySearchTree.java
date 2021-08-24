@@ -13,7 +13,7 @@ public class BinarySearchTree {
         bst.insertNodeInBinarySearchTree(root, 11);
         bst.insertNodeInBinarySearchTree(root, 12);
         bst.insertNodeInBinarySearchTree(root, 13);
-        
+
         bst.printInorderForBST(root);
     }
 
