@@ -5,7 +5,7 @@ import com.algorithm.tree.TreeNode;
 public class BalancedBinaryTree {
 
     public boolean isBalancedBinaryTree(TreeNode root) {
-        if(root== null) {
+        if (root == null) {
             return true;
         }
         final int i = MaxDepth.getMaxDepth(root.left) - MaxDepth.getMaxDepth(root.right);
