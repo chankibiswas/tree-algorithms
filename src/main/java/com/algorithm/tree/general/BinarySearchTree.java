@@ -1,6 +1,8 @@
 package com.algorithm.tree.general;
 
 import com.algorithm.tree.TreeNode;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class BinarySearchTree {
 
@@ -15,6 +17,7 @@ public class BinarySearchTree {
         bst.insertNodeInBinarySearchTree(root, 13);
 
         bst.printInorderForBST(root);
+        bst.printNodesWithBFS(root);
     }
 
     public void insertNodeInBinarySearchTree(TreeNode root, int newValue) {
@@ -45,5 +48,23 @@ public class BinarySearchTree {
         printInorderForBST(root.left);
         System.out.println(root.getValue());
         printInorderForBST(root.right);
+    }
+
+    public void printNodesWithBFS(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        Queue<TreeNode> q = new LinkedList<TreeNode>();
+        q.add(root);
+        while (!q.isEmpty()) {
+            TreeNode front = q.remove();
+            if (front.left != null) {
+                q.add(front.left);
+            }
+            if (front.right != null) {
+                q.add(front.right);
+            }
+            System.out.println(front.getValue());
+        }
     }
 }
