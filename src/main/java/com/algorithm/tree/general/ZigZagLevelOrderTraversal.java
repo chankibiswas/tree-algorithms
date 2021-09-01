@@ -1,6 +1,8 @@
 package com.algorithm.tree.general;
 
 import com.algorithm.tree.TreeNode;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 public class ZigZagLevelOrderTraversal {
@@ -24,8 +26,54 @@ public class ZigZagLevelOrderTraversal {
 
         ZigZagLevelOrderTraversal z = new ZigZagLevelOrderTraversal();
         z.printZigZagLevelOrderTraversal(t1);
+        z.zigzagLevelOrder(t1);
     }
 
+    // Returns List of nodes
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        if (root == null) {
+            return new ArrayList<List<Integer>>();
+        }
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        Stack<TreeNode> currentStack = new Stack<TreeNode>();
+        Stack<TreeNode> nextStack = new Stack<TreeNode>();
+
+        boolean leftToRightFlag = true;
+        currentStack.push(root);
+        List<Integer> currentList = new ArrayList<Integer>();
+
+        while (!currentStack.isEmpty()) {
+            TreeNode current = currentStack.pop();
+            currentList.add(current.getValue());
+
+            if (leftToRightFlag) {
+                if (current.left != null) {
+                    nextStack.push(current.left);
+                }
+                if (current.right != null) {
+                    nextStack.push(current.right);
+                }
+            } else {
+                if (current.right != null) {
+                    nextStack.push(current.right);
+                }
+                if (current.left != null) {
+                    nextStack.push(current.left);
+                }
+            }
+            if (currentStack.isEmpty()) {
+                leftToRightFlag = !leftToRightFlag;
+                Stack<TreeNode> temp = nextStack;
+                nextStack = currentStack;
+                currentStack = temp;
+                result.add(currentList);
+                currentList = new ArrayList<Integer>();
+            }
+        }
+        return result;
+    }
+
+    // Prints the value on nodes
     private void printZigZagLevelOrderTraversal(final TreeNode root) {
         if (root == null) {
             return;
