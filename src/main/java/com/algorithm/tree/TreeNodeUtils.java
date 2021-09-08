@@ -1,6 +1,6 @@
-package com.algorithm.tree.general;
+package com.algorithm.tree;
 
-import com.algorithm.tree.TreeNode;
+import java.util.LinkedList;
 
 public final class TreeNodeUtils {
 
@@ -15,6 +15,24 @@ public final class TreeNodeUtils {
             root.right = buildBinaryTree(arr, root.right, 2 * i + 2);
         }
         return root;
+    }
+
+    public static void printLevelOrder(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        LinkedList<TreeNode> q = new LinkedList();
+        q.addLast(root);
+        while (!q.isEmpty()) {
+            TreeNode temp = q.removeFirst();
+            System.out.println(temp.getValue());
+            if (temp.left != null) {
+                q.addLast(temp.left);
+            }
+            if (temp.right != null) {
+                q.addLast(temp.right);
+            }
+        }
     }
 
     public static void printInorder(TreeNode root) {
