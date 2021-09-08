@@ -6,9 +6,6 @@ public class TreeNode {
     public TreeNode right;
     private int val;
 
-    public TreeNode() {
-    }
-
     public TreeNode(final int val) {
         this.val = val;
     }
