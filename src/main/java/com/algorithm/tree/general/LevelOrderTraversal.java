@@ -11,10 +11,9 @@ public class LevelOrderTraversal {
     public static void main(String[] s) {
         LevelOrderTraversal lot = new LevelOrderTraversal();
 
-        Integer[] arr = {1, 2, 3, 4, 5};
+        Integer[] arr = {3, 9, 20, null, 15, 7};
         TreeNode root = TreeNodeUtils.buildBinaryTree(arr, null, 0);
-        List<List<Integer>> res = lot.levelOrder2(root);
-        System.out.println("H");
+        List<Double> list = lot.averageOfLevels(root);
     }
 
     /*
@@ -81,6 +80,39 @@ public class LevelOrderTraversal {
             }
             result.addFirst(temp);
             temp = new ArrayList<Integer>();
+        }
+        return result;
+    }
+
+    /*
+    Given the root of a binary tree, return the average value of the nodes on each level in the form of an array. Answers
+    within 10^5 of the actual answer will be accepted.
+    *
+    Input: root = [3,9,20,null,15,7]
+    Output: [3.00000,14.50000,11.00000]
+     */
+    public List<Double> averageOfLevels(TreeNode root) {
+        if (root == null) {
+            return new ArrayList<Double>();
+        }
+
+        LinkedList<TreeNode> q = new LinkedList<TreeNode>();
+        q.addLast(root);
+        List<Double> result = new ArrayList<Double>();
+        while (!q.isEmpty()) {
+            double sum = 0;
+            int size = q.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode treeNode = q.removeFirst();
+                sum = sum + treeNode.getValue();
+                if (treeNode.left != null) {
+                    q.addLast(treeNode.left);
+                }
+                if (treeNode.right != null) {
+                    q.addLast(treeNode.right);
+                }
+            }
+            result.add(((double)sum) / size);
         }
         return result;
     }
