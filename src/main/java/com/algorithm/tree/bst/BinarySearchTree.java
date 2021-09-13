@@ -1,6 +1,6 @@
-package com.algorithm.tree.general;
+package com.algorithm.tree.bst;
 
-import com.algorithm.tree.TreeNode;
+import com.algorithm.tree.model.TreeNode;
 import java.util.LinkedList;
 import java.util.Queue;
 

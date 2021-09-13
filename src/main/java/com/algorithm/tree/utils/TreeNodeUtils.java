@@ -1,5 +1,6 @@
-package com.algorithm.tree;
+package com.algorithm.tree.utils;
 
+import com.algorithm.tree.model.TreeNode;
 import java.util.LinkedList;
 
 public final class TreeNodeUtils {

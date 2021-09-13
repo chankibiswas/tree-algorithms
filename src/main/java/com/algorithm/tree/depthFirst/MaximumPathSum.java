@@ -1,6 +1,6 @@
-package com.algorithm.tree.general;
+package com.algorithm.tree.depthFirst;
 
-import com.algorithm.tree.TreeNode;
+import com.algorithm.tree.model.TreeNode;
 
 /*
 Given a non-empty binary tree, find the maximum path sum.

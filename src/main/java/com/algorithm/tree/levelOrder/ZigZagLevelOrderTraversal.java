@@ -1,6 +1,6 @@
-package com.algorithm.tree.general;
+package com.algorithm.tree.levelOrder;
 
-import com.algorithm.tree.TreeNode;
+import com.algorithm.tree.model.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;

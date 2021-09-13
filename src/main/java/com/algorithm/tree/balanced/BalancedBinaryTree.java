@@ -1,6 +1,7 @@
-package com.algorithm.tree.general;
+package com.algorithm.tree.balanced;
 
-import com.algorithm.tree.TreeNode;
+import com.algorithm.tree.depthFirst.MaxDepth;
+import com.algorithm.tree.model.TreeNode;
 
 public class BalancedBinaryTree {
 

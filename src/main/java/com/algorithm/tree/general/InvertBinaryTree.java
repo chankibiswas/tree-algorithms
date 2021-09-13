@@ -1,7 +1,7 @@
 package com.algorithm.tree.general;
 
-import com.algorithm.tree.TreeNode;
-import com.algorithm.tree.TreeNodeUtils;
+import com.algorithm.tree.model.TreeNode;
+import com.algorithm.tree.utils.TreeNodeUtils;
 
 public class InvertBinaryTree {
 
