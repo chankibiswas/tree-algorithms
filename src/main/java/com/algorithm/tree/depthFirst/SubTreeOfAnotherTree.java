@@ -21,8 +21,8 @@ public class SubTreeOfAnotherTree {
     public static void main(String[] s) {
         Integer[] root = {3, 4, 5, 1, 2};
         Integer[] subRoot = {4, 1, 2};
-        TreeNode rootNode = TreeNodeUtils.buildBinaryTree(root, null, 0);
-        TreeNode subRootNode = TreeNodeUtils.buildBinaryTree(subRoot, null, 0);
+        TreeNode rootNode = TreeNodeUtils.buildBinaryTree(root);
+        TreeNode subRootNode = TreeNodeUtils.buildBinaryTree(subRoot);
         System.out.println(isSubtree(rootNode, subRootNode));
     }
 

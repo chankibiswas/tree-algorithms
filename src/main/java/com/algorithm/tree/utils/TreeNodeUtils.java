@@ -8,7 +8,11 @@ public final class TreeNodeUtils {
     private TreeNodeUtils() {
     }
 
-    public static TreeNode buildBinaryTree(Integer[] arr, TreeNode root, int i) {
+    public static TreeNode buildBinaryTree(Integer[] arr) {
+        return buildBinaryTree(arr, null, 0);
+    }
+
+    private static TreeNode buildBinaryTree(Integer[] arr, TreeNode root, int i) {
         if (i < arr.length && arr[i] != null) {
             TreeNode temp = new TreeNode(arr[i]);
             root = temp;

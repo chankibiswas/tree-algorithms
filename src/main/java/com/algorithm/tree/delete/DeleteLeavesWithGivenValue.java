@@ -15,9 +15,10 @@ Explanation: Leaf nodes in green with value (target = 2) are removed (Picture in
 After removing, new nodes become leaf nodes with value (target = 2) (Picture in center).
  */
 public class DeleteLeavesWithGivenValue {
+
     public static void main(String[] s) {
         Integer[] n1 = {1, 2, 3, 2, null, 2, 4};
-        TreeNode p = TreeNodeUtils.buildBinaryTree(n1, null, 0);
+        TreeNode p = TreeNodeUtils.buildBinaryTree(n1);
 
         TreeNode treeNode = removeLeafNodes(p, 2);
         TreeNodeUtils.printInorder(treeNode);

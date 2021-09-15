@@ -8,7 +8,7 @@ public class InvertBinaryTree {
     public static void main(String[] s) {
         InvertBinaryTree ibt = new InvertBinaryTree();
         Integer[] t1 = {1, 2, 3, 4, 5, 6, null, null, null, 7, 8};
-        TreeNode root1 = TreeNodeUtils.buildBinaryTree(t1, null, 0);
+        TreeNode root1 = TreeNodeUtils.buildBinaryTree(t1);
         ibt.invertTree(root1);
         TreeNodeUtils.printInorder(root1);
     }

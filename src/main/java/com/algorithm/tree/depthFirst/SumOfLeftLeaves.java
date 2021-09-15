@@ -9,7 +9,7 @@ public class SumOfLeftLeaves {
 
     public static void main(String[] s) {
         Integer[] arr = {3, 9, 20, null, null, 15, 7};
-        TreeNode treeNode = TreeNodeUtils.buildBinaryTree(arr, null, 0);
+        TreeNode treeNode = TreeNodeUtils.buildBinaryTree(arr);
         System.out.println(sumOfLeftLeaves(treeNode));
     }
 

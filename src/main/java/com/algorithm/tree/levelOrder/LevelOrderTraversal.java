@@ -12,7 +12,7 @@ public class LevelOrderTraversal {
         LevelOrderTraversal lot = new LevelOrderTraversal();
 
         Integer[] arr = {3, 9, 20, null, 15, 7};
-        TreeNode root = TreeNodeUtils.buildBinaryTree(arr, null, 0);
+        TreeNode root = TreeNodeUtils.buildBinaryTree(arr);
         List<Double> list = lot.averageOfLevels(root);
     }
 
