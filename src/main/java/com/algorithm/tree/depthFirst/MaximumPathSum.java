@@ -51,17 +51,10 @@ public class MaximumPathSum {
         if (t == null) {
             return 0;
         }
-        int leftVal = calculateMaximumPathSum(t.left);
-        int rightVal = calculateMaximumPathSum(t.right);
-
-        // Temp stores max value here as child could have -ve values as well.
-        // Also it's strategy is to send value up.
-        int temp = Math.max(leftVal + rightVal + t.getValue(), t.getValue());
-        // Here strategy is to have left, right and node value. Treating this node as root here.
-        int ans = Math.max(temp, leftVal + rightVal + t.getValue());
-        // Taking max out of both strategies
-        result = Math.max(result, ans);
-        return temp;
+        int left = Math.max(calculateMaximumPathSum(t.left), 0);
+        int right = Math.max(calculateMaximumPathSum(t.right), 0);
+        result = Math.max(result, t.getValue() + left + right);
+        return Math.max(left, right) + t.getValue();
     }
 
     /*
@@ -71,15 +64,9 @@ public class MaximumPathSum {
         if (t == null) {
             return 0;
         }
-        int leftVal = calculateMaximumPathSumFromLeafToLeaf(t.left);
-        int rightVal = calculateMaximumPathSumFromLeafToLeaf(t.right);
-
-        // It's strategy is to send value up.
-        int temp = leftVal + rightVal + t.getValue();
-        // Here strategy is to have left, right and node value. Treating this node as root here.
-        int ans = Math.max(temp, leftVal + rightVal + t.getValue());
-        // Taking max out of both strategies
-        result = Math.max(result, ans);
-        return temp;
+        int left = calculateMaximumPathSumFromLeafToLeaf(t.left);
+        int right = calculateMaximumPathSumFromLeafToLeaf(t.right);
+        result = Math.max(result, t.getValue() + left + right);
+        return Math.max(left, right) + t.getValue();
     }
 }
