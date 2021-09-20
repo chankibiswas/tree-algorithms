@@ -39,7 +39,7 @@ public class KthSmallestInBST {
         traverseBSTInorder(root.left, k, result);
         result[0]++;
         if (result[0] == k) {
-            result[1] = root.getValue();
+            result[1] = root.val;
             return;
         }
         traverseBSTInorder(root.right, k, result);

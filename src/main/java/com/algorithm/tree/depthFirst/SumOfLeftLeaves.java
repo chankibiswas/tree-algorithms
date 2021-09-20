@@ -26,7 +26,7 @@ public class SumOfLeftLeaves {
             return;
         }
         if (root.left == null && root.right == null && leftFlag) {
-            result = result + root.getValue();
+            result = result + root.val;
         }
         if (root.left != null) {
             getSumOfLeftLeaves(root.left, true);

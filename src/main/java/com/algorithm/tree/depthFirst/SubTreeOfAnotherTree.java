@@ -33,7 +33,7 @@ public class SubTreeOfAnotherTree {
         if (subRoot == null) {
             return false;
         }
-        if (root.getValue() == subRoot.getValue()) {
+        if (root.val == subRoot.val) {
             return isSameTree(root, subRoot);
         } else {
             return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
@@ -46,7 +46,7 @@ public class SubTreeOfAnotherTree {
         } else if (root == null && subRoot == null) {
             return true;
         }
-        if (root.getValue() == subRoot.getValue()) {
+        if (root.val == subRoot.val) {
             return isSameTree(root.left, subRoot.left) && isSameTree(root.right, subRoot.right);
         } else {
             return false;

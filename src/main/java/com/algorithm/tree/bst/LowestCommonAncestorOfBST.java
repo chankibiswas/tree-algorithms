@@ -9,14 +9,14 @@ public class LowestCommonAncestorOfBST {
         TreeNode p = new TreeNode(2);
         TreeNode q = new TreeNode(4);
         TreeNode root = BinarySearchTree.createBST(nodes);
-        System.out.println(lowestCommonAncestor(root, p, q).getValue());
+        System.out.println(lowestCommonAncestor(root, p, q).val);
     }
 
     public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if (root.getValue() > p.getValue() && root.getValue() > q.getValue()) {
+        if (root.val > p.val && root.val > q.val) {
             return lowestCommonAncestor(root.left, p, q);
         }
-        if (root.getValue() < p.getValue() && root.getValue() < q.getValue()) {
+        if (root.val < p.val && root.val < q.val) {
             return lowestCommonAncestor(root.right, p, q);
         }
         return root;

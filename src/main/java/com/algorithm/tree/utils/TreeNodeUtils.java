@@ -30,7 +30,7 @@ public final class TreeNodeUtils {
         q.addLast(root);
         while (!q.isEmpty()) {
             TreeNode temp = q.removeFirst();
-            System.out.println(temp.getValue());
+            System.out.println(temp.val);
             if (temp.left != null) {
                 q.addLast(temp.left);
             }
@@ -45,7 +45,7 @@ public final class TreeNodeUtils {
             return;
         }
         printInorder(root.left);
-        System.out.println(root.getValue());
+        System.out.println(root.val);
         printInorder(root.right);
     }
 
@@ -55,14 +55,14 @@ public final class TreeNodeUtils {
         }
         printPostOrder(root.left);
         printPostOrder(root.right);
-        System.out.println(root.getValue());
+        System.out.println(root.val);
     }
 
     public static void printPreOrder(TreeNode root) {
         if (root == null) {
             return;
         }
-        System.out.println(root.getValue());
+        System.out.println(root.val);
         printPreOrder(root.left);
         printPreOrder(root.right);
     }

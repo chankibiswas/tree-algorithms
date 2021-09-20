@@ -36,7 +36,7 @@ public class BinarySearchTree {
         if (root == null) {
             return;
         }
-        if (root.getValue() > newValue) {
+        if (root.val > newValue) {
             if (root.left == null) {
                 TreeNode t = new TreeNode(newValue, null, null);
                 root.left = t;
@@ -58,7 +58,7 @@ public class BinarySearchTree {
             return;
         }
         printInorderForBST(root.left);
-        System.out.println(root.getValue());
+        System.out.println(root.val);
         printInorderForBST(root.right);
     }
 
@@ -76,7 +76,7 @@ public class BinarySearchTree {
             if (front.right != null) {
                 q.add(front.right);
             }
-            System.out.println(front.getValue());
+            System.out.println(front.val);
         }
     }
 }

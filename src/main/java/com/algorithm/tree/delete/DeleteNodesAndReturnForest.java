@@ -34,7 +34,7 @@ public class DeleteNodesAndReturnForest {
             itemsToDelete.add(i);
         }
         root = deleteNodes(root, itemsToDelete, result);
-        if (root != null && !itemsToDelete.contains(root.getValue())) {
+        if (root != null && !itemsToDelete.contains(root.val)) {
             result.add(root);
         }
         return result;
@@ -46,7 +46,7 @@ public class DeleteNodesAndReturnForest {
         }
         root.left = deleteNodes(root.left, itemsToDelete, result);
         root.right = deleteNodes(root.right, itemsToDelete, result);
-        if (root != null && itemsToDelete.contains(root.getValue())) {
+        if (root != null && itemsToDelete.contains(root.val)) {
             if (root.left != null) {
                 result.add(root.left);
             }

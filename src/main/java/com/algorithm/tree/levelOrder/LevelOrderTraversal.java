@@ -36,7 +36,7 @@ public class LevelOrderTraversal {
             int size = q.size();
             for (int i = 0; i < size; i++) {
                 TreeNode treeNode = q.removeFirst();
-                temp.add(treeNode.getValue());
+                temp.add(treeNode.val);
                 if (treeNode.left != null) {
                     q.addLast(treeNode.left);
                 }
@@ -70,7 +70,7 @@ public class LevelOrderTraversal {
             int size = q.size();
             for (int i = 0; i < size; i++) {
                 TreeNode treeNode = q.removeFirst();
-                temp.add(treeNode.getValue());
+                temp.add(treeNode.val);
                 if (treeNode.left != null) {
                     q.addLast(treeNode.left);
                 }
@@ -104,7 +104,7 @@ public class LevelOrderTraversal {
             int size = q.size();
             for (int i = 0; i < size; i++) {
                 TreeNode treeNode = q.removeFirst();
-                sum = sum + treeNode.getValue();
+                sum = sum + treeNode.val;
                 if (treeNode.left != null) {
                     q.addLast(treeNode.left);
                 }

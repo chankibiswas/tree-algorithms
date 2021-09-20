@@ -30,7 +30,7 @@ public class DeleteLeavesWithGivenValue {
         }
         TreeNode left = removeLeafNodes(root.left, target);
         TreeNode right = removeLeafNodes(root.right, target);
-        if (left == null && right == null && root.getValue() == target) {
+        if (left == null && right == null && root.val == target) {
             return null;
         }
         root.left = left;

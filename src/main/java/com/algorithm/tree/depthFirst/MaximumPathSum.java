@@ -53,8 +53,8 @@ public class MaximumPathSum {
         }
         int left = Math.max(calculateMaximumPathSum(t.left), 0);
         int right = Math.max(calculateMaximumPathSum(t.right), 0);
-        result = Math.max(result, t.getValue() + left + right);
-        return Math.max(left, right) + t.getValue();
+        result = Math.max(result, t.val + left + right);
+        return Math.max(left, right) + t.val;
     }
 
     /*
@@ -66,7 +66,7 @@ public class MaximumPathSum {
         }
         int left = calculateMaximumPathSumFromLeafToLeaf(t.left);
         int right = calculateMaximumPathSumFromLeafToLeaf(t.right);
-        result = Math.max(result, t.getValue() + left + right);
-        return Math.max(left, right) + t.getValue();
+        result = Math.max(result, t.val + left + right);
+        return Math.max(left, right) + t.val;
     }
 }

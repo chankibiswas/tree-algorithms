@@ -44,7 +44,7 @@ public class ZigZagLevelOrderTraversal {
 
         while (!currentStack.isEmpty()) {
             TreeNode current = currentStack.pop();
-            currentList.add(current.getValue());
+            currentList.add(current.val);
 
             if (leftToRightFlag) {
                 if (current.left != null) {
@@ -86,7 +86,7 @@ public class ZigZagLevelOrderTraversal {
 
         while (!currentStack.isEmpty()) {
             TreeNode current = currentStack.pop();
-            System.out.println(current.getValue());
+            System.out.println(current.val);
 
             if (leftToRightFlag) {
                 if (current.left != null) {
