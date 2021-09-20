@@ -7,20 +7,32 @@ import java.util.Queue;
 public class BinarySearchTree {
 
     public static void main(String[] s) {
-        BinarySearchTree bst = new BinarySearchTree();
         TreeNode root = new TreeNode(10);
-        bst.insertNodeInBinarySearchTree(root, 3);
-        bst.insertNodeInBinarySearchTree(root, 5);
-        bst.insertNodeInBinarySearchTree(root, 18);
-        bst.insertNodeInBinarySearchTree(root, 11);
-        bst.insertNodeInBinarySearchTree(root, 12);
-        bst.insertNodeInBinarySearchTree(root, 13);
+        insertNodeInBinarySearchTree(root, 3);
+        insertNodeInBinarySearchTree(root, 5);
+        insertNodeInBinarySearchTree(root, 18);
+        insertNodeInBinarySearchTree(root, 11);
+        insertNodeInBinarySearchTree(root, 12);
+        insertNodeInBinarySearchTree(root, 13);
 
-        bst.printInorderForBST(root);
-        bst.printNodesWithBFS(root);
+        printInorderForBST(root);
+        printNodesWithBFS(root);
     }
 
-    public void insertNodeInBinarySearchTree(TreeNode root, int newValue) {
+    public static TreeNode createBST(Integer[] arr) {
+        if (arr.length == 0) {
+            return null;
+        }
+        TreeNode root = new TreeNode(arr[0]);
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] != null) {
+                insertNodeInBinarySearchTree(root, arr[i]);
+            }
+        }
+        return root;
+    }
+
+    public static void insertNodeInBinarySearchTree(TreeNode root, int newValue) {
         if (root == null) {
             return;
         }
@@ -41,7 +53,7 @@ public class BinarySearchTree {
         }
     }
 
-    public void printInorderForBST(TreeNode root) {
+    public static void printInorderForBST(TreeNode root) {
         if (root == null) {
             return;
         }
@@ -50,7 +62,7 @@ public class BinarySearchTree {
         printInorderForBST(root.right);
     }
 
-    public void printNodesWithBFS(TreeNode root) {
+    public static void printNodesWithBFS(TreeNode root) {
         if (root == null) {
             return;
         }
