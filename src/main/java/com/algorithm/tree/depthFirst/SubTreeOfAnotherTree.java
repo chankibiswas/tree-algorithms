@@ -34,7 +34,11 @@ public class SubTreeOfAnotherTree {
             return false;
         }
         if (root.val == subRoot.val) {
-            return isSameTree(root, subRoot);
+            if (isSameTree(root, subRoot)) {
+                return true;
+            } else {
+                return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
+            }
         } else {
             return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
         }
